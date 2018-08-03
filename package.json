@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "prop-types": "^15.6.2",
+    "query-string": "^6.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
@@ -24,7 +25,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack --progress"
+    "build": "NODE_ENV='production' webpack -p",
+    "deploy": "npm run build && firebase deploy",
+    "firebase-init": "firebase login && firebase init"
   },
   "babel": {
     "presets": [
